@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="addTax/addTax.vcxproj" />
+  <Project Path="ChapterTwo/ChapterTwo.vcxproj" />
+  <Project Path="KNKing/KNKing.vcxproj" />
+  <Project Path="Polynomial/Polynomial.vcxproj" />
+</Solution>
