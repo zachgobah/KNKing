@@ -2,8 +2,9 @@
 
 struct loan {
   double principle;
-  double intRate;
-  double monthlyPymt;
+  double interest;
+  double payment;
+  int months;
 };
 
 double calculateBalance(double *principle, double *interest, double *payment, int *months)
@@ -18,10 +19,10 @@ double calculateBalance(double *principle, double *interest, double *payment, in
 
 int main()
 {
-  double principle;
-  double interest;
-  double payment;
-  int months;
+  double *principle = NULL;
+  double *interest = NULL;
+  double *payment = NULL;
+  int *months = NULL;
 
   printf("Enter amount of loan: ");
   scanf("%lf", &principle);
@@ -30,10 +31,10 @@ int main()
   scanf("%lf", &interest);
 
   printf("Enter monthly payment: ");
-  scanf("%lf", payment);
+  scanf("%lf", &payment);
 
   printf("Months: ");
-  scanf("%d", months);
+  scanf("%d", &months);
 
   calculateBalance(principle, interest, payment, months);
     // printf("%lf\n%lf\n%lf\n%lf\n", prin, intr, py, loan.principle);
