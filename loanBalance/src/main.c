@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-struct loan {
+struct Loan {
   double principle;
   double interest;
   double payment;
@@ -10,34 +10,35 @@ struct loan {
 double calculateBalance(double *principle, double *interest, double *payment, int *months)
 {
   
-  for (int i = 0; i < *months; i++)
+  for (int i = 1; i < *months + 1; i++)
   {
     *principle = (*principle - *payment);
-    printf("Balance remaining after month %d: $%.2lf\n", i, *principle);
+    printf("Balance remaining after payment %d: $%.2lf\n", i, *principle);
   }
 }
 
 int main()
 {
-  double *principle = NULL;
-  double *interest = NULL;
-  double *payment = NULL;
-  int *months = NULL;
+//   double *principle = NULL;
+//   double *interest = NULL;
+//   double *payment = NULL;
+//   int *months = NULL;
+
+struct Loan loan;
 
   printf("Enter amount of loan: ");
-  scanf("%lf", &principle);
+  scanf("%lf", &loan.principle);
 
   printf("Enter interest rate: ");
-  scanf("%lf", &interest);
+  scanf("%lf", &loan.interest);
 
   printf("Enter monthly payment: ");
-  scanf("%lf", &payment);
+  scanf("%lf", &loan.payment);
 
   printf("Months: ");
-  scanf("%d", &months);
+  scanf("%d", &loan.months);
 
-  calculateBalance(principle, interest, payment, months);
-    // printf("%lf\n%lf\n%lf\n%lf\n", prin, intr, py, loan.principle);
+  calculateBalance(&loan.principle, &loan.interest, &loan.payment, &loan.months);
 
   return 0;
 }
