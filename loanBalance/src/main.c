@@ -12,17 +12,14 @@ double calculateBalance(double *principle, double *interest, double *payment, in
   
   for (int i = 1; i < *months + 1; i++)
   {
-    *principle = (*principle - *payment);
+    *principle = ( ( *principle + ( *principle * ( *interest / 100 ) ) / 12 ));
+    *principle = ( *principle - *payment );
     printf("Balance remaining after payment %d: $%.2lf\n", i, *principle);
   }
 }
 
 int main()
 {
-//   double *principle = NULL;
-//   double *interest = NULL;
-//   double *payment = NULL;
-//   int *months = NULL;
 
 struct Loan loan;
 
