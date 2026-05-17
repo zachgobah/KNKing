@@ -399,6 +399,20 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Ignore specific executable names (replace with your compiled output names)
+main
+my_program
+a.out
+
+# Ignore all files in a specific build directory
+build/
+bin/
+
+# Ignore common compiled object/library files
+*.o
+*.out
+*.so
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
