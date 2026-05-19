@@ -123,38 +123,38 @@ int main() {
             printf("\n");
         }
 
-        if (i >= 0 && i < 4){
+        else if (i >= 0 && i < 4){
             rowA = (rowA + magicNums[i]);
         }
 
-        if (i >= 4 && i < 8){
+        else if (i >= 4 && i < 8){
             rowB = (rowB + magicNums[i]);
         }
 
-        if (i >= 8 && i < 12){
+        else if (i >= 8 && i < 12){
             rowC = (rowC + magicNums[i]);
         }
 
-        if (i >= 12 && i < 16){
+        else if (i >= 12 && i < 16){
             rowD = (rowD + magicNums[i]);
         }
 
-        if (i % 4 == 0){
+        else if (i % 4 == 0){
             colA = (colA + magicNums[i]);
         }
-        if (i == 1 || i == 5 || i == 9 || i == 13){
+        else if (i == 1 || i == 5 || i == 9 || i == 13){
             colB = (colB + magicNums[i]);
         }
-        if (i == 2 || i == 6 || i == 10 || i == 14){
+        else if (i == 2 || i == 6 || i == 10 || i == 14){
             colC = (colC + magicNums[i]);
         }
-        if (i == 3 || i == 7 || i == 11 || i == 15){
+        else if (i == 3 || i == 7 || i == 11 || i == 15){
             colD = (colD + magicNums[i]);
         }
-        if (i % 3 == 0 && i != 0 && i != 15){
+        else if (i % 3 == 0 && i != 0 && i != 15){
             diaA = (diaA + magicNums[i]);
         }
-        if (i % 5 == 0){
+        else if (i % 5 == 0){
             diaB = (diaB + magicNums[i]);
         }
     }
