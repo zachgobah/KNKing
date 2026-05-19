@@ -17,7 +17,7 @@ int main() {
 
     printf("\n");
     
-    int rowA, rowB, rowC, rowD, colA, colB, colC, colD, diaA,diaB;
+    int rowA = 0, rowB = 0, rowC = 0, rowD = 0, colA = 0, colB = 0, colC = 0, colD = 0, diaA = 0, diaB = 0;
 
     // for (int i = 0; i < 4; i++){
     //     printf("%2d\t", magicNums[i]);
