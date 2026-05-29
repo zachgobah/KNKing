@@ -1,11 +1,14 @@
 #include <stdio.h>
 
 int main() {
-	int n;
-	printf("Enter a two digit number: ");
-	scanf("%d", &n);
+	int one = 0;
+	int two = 0;
+	int three = 0;
 
-	printf("The reversal is: %d%d\n", (n%10), (n/10));
+	printf("Enter a three digit number: ");
+	scanf("%d%d%d", &one, &two, &three);
+
+	printf("The reversal is: %d%d%d\n", three, two, one);
 
 	return 0;
 }
