@@ -22,13 +22,13 @@ int main() {
 
 	if (transaction_size < 2500.00)
 		commission = (30.00 + (transaction_size * 0.017));
-	else if (transaction_size >= 2500.00 && transaction_size < 6250.00)
+	else if (transaction_size < 6250.00)
 		commission = (56.00 + (transaction_size * 0.0066));
-	else if (transaction_size >= 6250.00 && transaction_size < 20000.00)
+	else if (transaction_size < 20000.00)
 		commission = (76.00 + (transaction_size * 0.0034));
-	else if (transaction_size >= 20000.00 && transaction_size < 50000.00)
+	else if (transaction_size < 50000.00)
 		commission = (100.00 + (transaction_size * 0.0022));
-	else if (transaction_size >= 50000.00 && transaction_size < 500000.00)
+	else if (transaction_size < 500000.00)
 		commission = (155 + (transaction_size * 0.0011));
 	else if (transaction_size >= 500000.00)
 		commission = (255.00 + (transaction_size * 0.0009));
