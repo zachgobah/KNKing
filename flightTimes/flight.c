@@ -7,8 +7,8 @@ int main() {
 
     printf("Enter a 24-hour time: ");
     scanf("%d:%d", &hrs, &mins);
-    char time_period[2] = "a";
-    char arrival_period[2] = "a";
+    char time_period = 'a';
+    char arrival_period = 'a';
 
     /* departure times:
         8:00 - 480
@@ -76,7 +76,7 @@ int main() {
     hrs = (hrs / 60);
 
     if (hrs >= 12){
-        time_period[0] = 'p';
+        time_period = 'p';
         if (hrs > 12){
             hrs = (hrs - 12);
         }
@@ -88,15 +88,15 @@ int main() {
     arrival_hrs = (arrival / 60);
 
     if (arrival_hrs >= 12){
-        arrival_period[0] = 'p';
+        arrival_period = 'p';
         if (arrival_hrs > 12){
-        arrival_hrs = (arrival_hrs - 12);
+            arrival_hrs = (arrival_hrs - 12);
         }
-    } else if (hrs == 0){
+    } else if (arrival_hrs == 0){
         arrival_hrs = 12;
     }
 
-    printf("Closest departure time is: %d:%02d %s.m., arriving at %d:%02d %s.m.\n", hrs, mins, time_period, arrival_hrs, arrival_mins, arrival_period);
+    printf("Closest departure time is: %d:%02d %c.m., arriving at %d:%02d %c.m.\n", hrs, mins, time_period, arrival_hrs, arrival_mins, arrival_period);
 
     return 0;
 
