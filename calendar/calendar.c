@@ -7,7 +7,7 @@ int main(){
     printf("Enter first date: ");
     scanf("%d/%d/%d", &month, &day, &year);
 
-    printf("Enter second: date: ");
+    printf("Enter second date: ");
     scanf("%d/%d/%d", &month_two, &day_two, &year_two);
 
     if (year_two > year){
