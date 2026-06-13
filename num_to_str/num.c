@@ -7,7 +7,7 @@ int main(){
     printf("Enter a two-digit number: ");
     scanf("%d", &num);
 
-    if(num > 99){
+    if(num > 99 || num < 1){
         printf("INVALID NUMBER\n");
         return 0;
     }
@@ -81,7 +81,7 @@ int main(){
     }
 
 
-        if (first > 0){
+        if (first > 0 && second > 0){
             printf("-");
         }
 
