@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    unsigned int hrs = 0, minutes = 0, time = 0;
+    int hrs = 0, minutes = 0, time = 0;
 
     while(1){
         printf("Enter a 24-hour time: ");
@@ -16,31 +16,30 @@ int main(){
 
     time = (hrs * 60) + minutes;
 
-    unsigned int departure[8] = {480, 583, 679, 767, 840, 945, 1140, 1305};
-    unsigned int arrival[8] = {616, 712, 811, 900, 968, 1075, 1280, 1438};
-    unsigned int diff = 0;
-    unsigned int closest = 0;
-    unsigned int closestArr = 0;
-    unsigned int arrHrs = 0, arrMins = 0;
+    int departure[8] = {480, 583, 679, 767, 840, 945, 1140, 1305};
+    int arrival[8] = {616, 712, 811, 900, 968, 1075, 1280, 1438};
+    int diff = 0;
+    int closest = 0;
+    int closestArr = 0;
+    int arrHrs = 0, arrMins = 0;
     char ampm[3] = "AM";
     char ampmArr[3] = "AM";
 
     size_t size = sizeof(departure) / sizeof(departure[0]);
 
-    for (int i = 0; i < size; i++){
+    for (size_t i = 0; i < size; i++){
         if (time < departure[i]){
             if (i == 0){
                 diff = (departure[i] - time);
                 closest = departure[i];
                 closestArr = arrival[i];
             }
-            if (i+1 > size){
-                break;
-            }
-            if (diff > departure[i+1] - time){
-                diff = (departure[i+1] - time);
-                closest = departure[i+1];
-                closestArr = arrival[i+1];
+            if (i + 1 < size){
+                if (diff > departure[i+1] - time){
+                    diff = (departure[i+1] - time);
+                    closest = departure[i+1];
+                    closestArr = arrival[i+1];
+                }
             }
         } else if (time >= departure[i]){
             if (i == 0){
@@ -48,13 +47,12 @@ int main(){
                 closest = departure[i];
                 closestArr = arrival[i];
             }
-            if (i+1 > size){
-                break;
-            }
-            if (diff > time - departure[i+1]){
-                diff = time - departure[i+1];
-                closest = departure[i+1];
-                closestArr = arrival[i+1];
+            if (i + 1 < size){
+                if (diff > time - departure[i+1]){
+                    diff = time - departure[i+1];
+                    closest = departure[i+1];
+                    closestArr = arrival[i+1];
+                }
             }
         }
     }
@@ -83,7 +81,7 @@ int main(){
         arrHrs = 12;
     }
 
-    printf("The closest departure is: %u:%02u %s, arriving at %u:%02u %s\n", hrs, minutes, ampm, arrHrs, arrMins, ampmArr);
+    printf("The closest departure is: %d:%02d %s, arriving at %d:%02d %s\n", hrs, minutes, ampm, arrHrs, arrMins, ampmArr);
 
     return 0;
 
