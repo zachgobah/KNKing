@@ -1,12 +1,19 @@
 #include <stdio.h>
 
 int main() {
-	int n;
-	printf("Enter a three digit number: ");
-	scanf("%d", &n);
-	printf("The reversal: %d%d%d\n", n % 10, (n / 10) % 10, n / 100);
+	int n = 0, m = 0;
 
-	// I couldn't figure this one out without looking up the answer so I'm not uploading it.
-	return 0;
+    printf("Enter a number: ");
+	scanf("%d", &n);
+
+    do {
+        m = (n % 10);
+        n = (n / 10);
+        printf("%d", m);
+    } while ( n != 0);
+
+    printf("\n");
+
+    return 0;
 
 }
