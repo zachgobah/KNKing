@@ -21,20 +21,23 @@ int main(){
             day = new_day;
         }
 
-        else if (new_year < year){
+       else if (new_year < year){
             year = new_year;
             month = new_month;
             day = new_day;
-        } else if (new_month < month){
-            year = new_year;
-            month = new_month;
-            day = new_day;
-        } else if (new_day <= day){
-            year = new_year;
-            month = new_month;
-            day = new_day;
+        } else if (new_year == year){
+            if (new_month < month){
+                year = new_year;
+                month = new_month;
+                day = new_day;
+            } else if (new_month == month){
+                if (new_day < day){
+                    year = new_year;
+                    month = new_month;
+                    day = new_day;
+                }
+            }
         }
-
     }
 
     printf("%d/%d/%d is the earliest date.\n", month, day, year);
