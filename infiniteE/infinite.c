@@ -10,7 +10,8 @@ int main()
 
     for (int i = 1; i <= n; i++){
         y = (y * i);
-        e = (e + (1.0f / y));
+        float term = 1.0f / y;
+        e += term;
     }
 
     printf("%f\n", e);
